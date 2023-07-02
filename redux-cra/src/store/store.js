@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 
 const initState = {
   accounts: [
@@ -10,8 +10,20 @@ const initState = {
     },
     {
       id: 2,
-      customerName: "Ahmad Zahran",
+      customerName: "Hind Saed",
       accountNumber: "987654",
+      accountType: "Student accounts",
+    },
+    {
+      id: 3,
+      customerName: "Noor Sami",
+      accountNumber: "987634",
+      accountType: "Student accounts",
+    },
+    {
+      id: 4,
+      customerName: "Farah al-masri",
+      accountNumber: "557654",
       accountType: "Student accounts",
     },
   ],
@@ -22,6 +34,8 @@ const reducer = (state = initState, action) => {
   return state;
 };
 
-const store = createStore(reducer);
+const store = configureStore({
+  reducer: reducer,
+});
 
 export default store;
